@@ -1,0 +1,55 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double balance, deposite, withdraw;
+    int option;
+    balance=100;
+    
+    
+    do{
+   cout<< "--------------MENU--------------" <<endl;
+   cout<<"      -How Can I Help You-"<<endl;
+   cout<<  "          1. Check balance"<<endl;
+   cout<<  "          2. Deposit"<<endl;
+   cout<<  "          3. Withdraw"<<endl;
+   cout<<  "          4. Transfer"<<endl;
+   cout<<  "          5. Exit"<<endl;
+   cout<<"please choose an option: "<<endl; 
+   cin>>option;
+   switch(option){
+   
+       case 1:
+       cout<<"your balance is: "<<balance<<endl;
+       break;
+       case 2:
+       cout<<"amount you want to deposite: "<<endl;
+       cin>>deposite;
+       balance+= deposite;
+       cout<<"your current balance: "<<balance<<endl;
+       break;
+       case 3:
+       cout<<"how much do ypu want to withdraw: "<<endl;
+       cin>>withdraw;
+       if(balance<withdraw)
+       cout<<"money insufficient"<<endl;
+       else
+       balance-=withdraw;
+       cout<<"current balance: "<<balance<<endl;
+       break;
+       case 4:
+       cout<< "sorry currently this service is not available"<<endl;
+       break;
+       default:
+       if(option!=5)
+       cout<<"invalid option"<<endl;
+       break;
+       
+   }
+   
+    }while(option!=5);
+    system("pause");
+   return 0;
+   
+  
+}
