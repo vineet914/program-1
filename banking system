@@ -1,0 +1,87 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double balance, deposite, withdraw, accno, money;
+    int option;
+    double number=1000;
+    char name[20];
+    double i=1001;
+    double n =1001;
+    balance=100;
+    
+    
+    do{
+   cout<< "--------------MENU--------------" <<endl;
+   cout<<"      -How Can I Help You-"<<endl;
+   cout<<  "          1. Create account"<<endl;
+   cout<<  "          2. Deposit"<<endl;
+   cout<<  "          3. Withdraw"<<endl;
+   cout<<  "          4. Transfer"<<endl;
+   cout<<  "          5. Check balance"<<endl;
+   cout<<  "          6. Exit"<<endl;
+   cout<<"please choose an option: "<<endl; 
+   cin>>option;
+   switch(option){
+   
+       case 1:
+       cout<<"please enter your name: "<<endl;
+       cin>>name;
+       cout<<"account created successfully"<<endl;
+       cout<<"Hi "<<name<<" your account no. is: "<<number<<endl;
+       number++;
+       n++;
+       break;
+       case 2:
+       cout<<"amount you want to deposite: "<<endl;
+       cin>>deposite;
+       balance+= deposite;
+       cout<<"your current balance: "<<balance<<endl;
+       break;
+       case 3:
+       cout<<"how much do ypu want to withdraw: "<<endl;
+       cin>>withdraw;
+       if(balance<withdraw)
+       cout<<"money insufficient"<<endl;
+       else
+       balance-=withdraw;
+       cout<<"current balance: "<<balance<<endl;
+       break;
+       case 4:
+       cout<< "please enter the account number: "<<endl;
+       cin>>accno;
+       for(i=1001;i<n;i++){
+           if(accno=i){
+           cout<<"how much money do you want to transfer: "<<endl;
+           cin>>money;
+           
+            if(money>balance){
+           cout<<"money insufficient"<<endl;
+           }
+           else
+           balance-=money;
+           cout<<"your current balance is: "<<balance<<endl;
+           
+           }
+           else
+           cout<<"accno is not in list"<<endl;
+           
+            }
+            
+       break;
+       case 5:
+       cout<<"your balance is: "<<balance<<endl;
+       break;
+       default:
+       if(option!=5)
+       cout<<"invalid option"<<endl;
+       break;
+       
+   }
+   
+    }while(option!=5);
+    system("pause");
+   return 0;
+   
+  
+}
